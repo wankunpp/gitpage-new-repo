@@ -1,0 +1,55 @@
+<section id="myRates" class="section-padding">
+  <div class="container"  >
+      <div class="col-md-12 title text-center">
+              <h2>Our prices</h2>
+      </div>
+      <div class="row service-form flipInX">
+          <div class="col-md-4 text-top service-type">
+              Bridal
+          </div>
+          <div class ="col-md-8 text-left service-price">
+              <p>Bride: $270</p>
+              <p>Includes:</p>
+              <ul>
+                  <li>Consultation</li>
+                  <li>Day-of make up</li>
+              </ul>
+          </div>
+       </div> 
+      <hr/>
+      <div class="row service-form flipInX">
+              <div class="col-md-4 text-top service-type">
+                  Lessons
+                  </div>
+                  <div class ="col-md-8 text-left service-price">
+                      <p>Bride: $270</p>
+                      <p>Includes:</p>
+                      <ul>
+                          <li>Consultation</li>
+                          <li>Day-of make up</li>
+                      </ul>
+                  </div>
+              </div> 
+  </div>
+</section>
+<hr/>
+<div class="container" style="min-height:30em;">
+    <div class="row">
+       
+            <div class="col-xs-8 col-8 col-md-5 col-lg-4 form-group">
+                <h3>Make an Appointment</h3>
+              <input class="form-control" placeholder="Please choose a date" bsDatepicker [(ngModel)]="datepickerModel" [minDate]="minDate" [bsConfig]="{ dateInputFormat: 'MMMM Do YYYY' }"/>
+              
+              </div>
+              <div style="padding:30px" *ngIf="datepickerModel && !isLogged">
+                <p style="color:red;font-size:30px;">you have to log in first!!!!</p>
+                <button class="btn btn-info" routerLink="/login">Go to login</button>
+              </div>
+              <div class="date-confirm" *ngIf="datepickerModel && isLogged ">
+                    <p  *ngIf="hasAppoint">You have an appointment at: <span> <b>{{datepickerModel|date:'fullDate'}}</b></span></p>
+                    <p *ngIf="!hasAppoint">Please confirm your appointment</p>
+                    <button class="btn btn-success" (click)="onAddAppointment(datepickerModel)" [disabled]="hasAppoint" >Confirm</button>
+                    <button class="btn btn-danger" (click)="cancelAppointment()">Cancel</button>
+            </div>
+    </div>
+    

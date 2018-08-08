@@ -1,0 +1,53 @@
+<div class="container" style="padding:50px;">
+  <div class="row">
+    <div class="col-md-5">
+      <img [src]="cosmetic.imgUrl" class="img-fluid" style="width:100%">
+    </div>
+    <div class="col-md-7 text-center" style="padding-top:30px;">
+      <h2>{{cosmetic.name}}</h2>
+      <h4>{{cosmetic.description}}</h4>
+      <p>Price: ${{cosmetic.price}}</p>
+
+      <rating   [(ngModel)]="rate"  [max]="5" [readonly]="true" [customTemplate]="tt"></rating>
+      <p>({{reviewAmount}} reviews)</p>
+      <ng-template #tt let-i="index" let-v="value">
+          <i class="fa fa-star{{i<v?'':'-o'}} fa-2x"  style="color:yellow;"></i>
+      </ng-template>
+
+      <button class="btn btn-success"  (click)="onAddtoCart(cosmetic)" [disabled]="!isLoggedin">Add to Cart</button>
+      <button class="btn btn-info" (click)="onWriteReview()" [disabled]="!isLoggedin"> Write a review</button>
+      
+    </div>
+  </div>
+  <section class="review-section">
+    <h2 class="text-center">Reviews</h2>
+
+    <ng-template [ngIf]="onWrite">
+      <div class="newReviewBox">
+          <div class="row">
+              <label for="newRating" class="new-rating">Your Rating : </label>
+              <rating name="newRating" [(ngModel)]="newRating" [max]="5" [readonly]="isReadonly" (keyup)="confirmSelection($event)" ></rating>
+            </div>
+            <form (ngSubmit)="onAddReview(f)" #f="ngForm">
+              <label for="newComment">Your Comment: </label>
+              <textarea class="form-control" name="newComment" ngModel></textarea>
+              <button class="btn btn-info btn-sm" type="submit">Add review</button>
+            </form>
+      </div>
+          
+    </ng-template>
+
+
+    <div class="comment-box" *ngFor="let review of reviews">
+        <p>{{review.user_name}}</p>
+        <rating   [(ngModel)]="review.rate"  [max]="5" [readonly]="true"></rating><br>
+        <p class="comment-area">{{review.comments}}</p>
+    </div>
+
+    <div *ngIf="reviews.length===0">
+      <p>No reviews on this product. Be the first to reveiw.</p>
+    </div>
+  </section>
+  
+
+</div>

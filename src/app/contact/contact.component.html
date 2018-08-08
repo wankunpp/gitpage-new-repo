@@ -1,0 +1,47 @@
+<div id="contact" class="contact-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 col-sm-6">
+              <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+                  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
+          </div>
+          <div class= "col-md-6 col-sm-6 contact-form">
+              <h2>Contact us</h2>
+              <form id="contac-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" formControlName="name" >
+                        <p *ngIf="!contactForm.get('name').valid && contactForm.get('name').touched" style="color:red"> Please input valid name </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" class="form-control" name="phone" formControlName="phone">
+                        <p *ngIf="!contactForm.get('phone').valid && contactForm.get('phone').touched" style="color:red"> Please input valid phone number </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-md-12">
+                            <label for="name">email</label>
+                            <input type="email" class="form-control" name="email" formControlName="email">
+                            <p *ngIf="!contactForm.get('email').valid && contactForm.get('email').touched" style="color:red"> Please input valid email address </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="name">Message</label>
+                            <textarea type="text" class="form-control" name="message" formControlName="message"></textarea>
+                            <p *ngIf="!contactForm.get('message').valid && contactForm.get('message').touched" style="color:red"> Please leave your meaasge to us </p>
+                        </div>
+                     </div>
+                  <button type="submit" class="btn btn-secondary send-button" [disabled]="!contactForm.valid">Send message</button>
+              </form>
+          </div>
+      </div>
+      
+      
+  </div>
+</div>

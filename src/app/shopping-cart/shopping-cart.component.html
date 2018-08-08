@@ -1,0 +1,46 @@
+<div class="container cart">
+    <h2 class="text-center"  style="min-height:3em;">Your Appointment</h2>
+      <div class = "text-center">   
+         <div class="row" *ngIf="appointment">
+
+        <p style="color:rgba(151, 34, 19, 0.541);font-size:40px">You have an appointment at:<b> {{appointment.date|date:'fullDate'}} </b></p>
+      
+      <div class="offset-md-5">
+          <button class="btn btn-danger" (click)="cancelAppointment()">Cancel</button>
+      </div>
+      
+    </div>
+    </div>
+    <hr/>
+
+    <h2 class="text-center">Shopping Cart</h2>
+    <hr/>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"  >Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Amount</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of cart" >
+        <tr>
+          <th scope="row"><img [src]="item.imgUrl"  class="img-fluid" style="height:200px ;width:200px"></th>
+          <td><h3>{{item.name}}</h3><p>{{item.description}}</p></td>
+          <td>{{item.price*item.amount}}</td>
+          <td>
+            <!-- {{item.amount}} &nbsp;&nbsp;&nbsp;  -->
+            <select id="{{item.name}}"  (change)="onChangeAmount(item.name)" >
+              <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [selected]="i===item.amount"  [value]="i" >{{i}}</option>
+            </select>
+            </td>
+           <td>
+             <button class="btn btn-danger" (click)="onDelete(item)" >Delete</button>
+            </td> 
+        </tr>
+        </tbody>
+    
+        </table>
+</div>

@@ -1,0 +1,71 @@
+<section class="bg-overlay">
+    <div class="overlay">
+        <div class="row justify-content-md-center">
+            <div class="wrapper-message">
+                <h1>Beauty</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding bg-grey">
+    <div class="container">
+        <h2 class="section-title text-center">Introducing our beauty team</h2>
+        <p class="section-lead text-center text-muted">Send us your inquiry, we will help you and reply as soon as possible</p>
+    </div>
+    <div style="text-align:center;">
+        <button class="btn btn-outline-secondary direct-button" routerLink="about">Discover more</button>
+    </div>
+    <hr/>
+</section>
+
+<section class="bg-overlay-2">
+        <div class="overlay">
+            <div class="row justify-content-md-center">
+                <div class="wrapper-message">
+                    <h1>Gallery</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="padding bg-grey">
+    <div class="container">
+        <h2 class="section-title text-center">See our beautiful work</h2>
+        <p class="section-lead text-center text-muted">Send us your inquiry, we will help you and reply as soon as possible</p>
+    </div>
+    <div style="text-align:center;">
+        <button class="btn btn-outline-secondary direct-button" routerLink="portfolio" >View Photos</button>
+    </div>
+    <hr/>
+</section>
+
+<section class="bg-overlay-3">
+    <div class="overlay">
+        <div class="row justify-content-md-center">
+            <div class="wrapper-message">
+                <h1>Services</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="padding bg-grey">
+<div class="container">
+    <h2 class="section-title text-center">Explore our services</h2>
+    <p class="section-lead text-center text-muted">Send us your inquiry, we will help you and reply as soon as possible</p>
+</div>
+<div style="text-align:center;">
+    <button class="btn btn-outline-secondary direct-button" routerLink="services" >Explore Services</button>
+</div>
+<hr/>
+</section>
+
+<section name="company-map">
+        <div class="row">
+                <div class="col-md-12">
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+        </div>
+</section>
+
+

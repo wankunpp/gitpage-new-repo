@@ -1,0 +1,35 @@
+
+  <div class="row cos-search-bar" >
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" #Name (keyup.enter)="onSearch(Name.value)">
+      <div class="input-group-append">
+        <button class="btn btn-secondary" type="button" (click)="onSearch(Name.value)">Search</button>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="cos-container">
+    <div class="row justify-content-center">
+      <h2 style="margin-bottom:50px;">Our Cosmetic Products</h2>
+    </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6" *ngFor="let cosme of cosmetics|filter:filteredName:'name';let i=index" >
+      <a  class="card-item" [routerLink]="[cosme.name]">
+        <figure>
+            <img [src]="cosme.imgUrl" alt="cosmetic" class="img-fluid">
+        </figure>
+        <div class="card-text">
+          <h2>{{cosme.name}}</h2>
+          <rating   [max]="5" [readonly]="true" [customTemplate]="tt" [ngModel]="rates[i][cosme.name]"></rating>
+          <span style="margin-left:5px; color:black">{{rates[i][cosme.name]|number:'1.1-1'}}</span><br>
+          <p>Price: ${{cosme.price}}</p>
+         
+        <ng-template #tt let-i="index" let-v="value">
+            <i class="fa fa-star{{i<v?'':'-o'}} fa-lg"  style="color:rgb(177, 177, 77)"></i>
+        </ng-template>
+          
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

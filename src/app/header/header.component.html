@@ -1,0 +1,66 @@
+<div class="header">
+    <div class="bg-color">
+        <header id="main-header">
+            <nav class="navbar navbar-expand-sm  navbar-light border-bottom border-light fixed-top" [ngStyle]="{backgroundColor:checkScroll()}">
+                <a class="navbar-brand" routerLink="">Lareina Studio </a>
+                <ul class="navbar-nav mx-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/" routerActive="active">Welcome</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" routerLink="about" routerActive="active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="portfolio" routerActive="active">Portfolio</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown" (mouseenter)="onMouseenter()" >
+                        <a class="nav-link" style="cursor:pointer;">Services</a>
+                                <ul class="dropdown-menu" [style.display]="isshow===true?'block':'none'" (mouseleave)="onMouseleave()">
+                                        <li>
+                                            <a class="nav-link dropdown-item" routerLink="/rates">Makeup</a>
+                                            <a class="nav-link dropdown-item" routerLink="/cosmetics">Cosmetics</a>
+                                            <a class="nav-link dropdown-item" href="#">Cakes</a>
+                                        </li>
+                                    </ul>
+                    </li> -->
+                    <li class="nav-item dropdown" id="dropdown-services"   >
+                            <a class="nav-link" style="cursor:pointer;" routerLink="services" routerActive="active">Services</a>
+                                    <ul class="dropdown-menu" id="dropdown-menu-services"  >
+                                            <li>
+                                                <a class="nav-link dropdown-item" routerLink="/makeup">Makeup</a>
+                                                <a class="nav-link dropdown-item" routerLink="/cosmetics">Cosmetics</a>
+                                                <a class="nav-link dropdown-item" href="#">Cakes</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                  
+                
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="contact" routerActive="active">Contact</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"  *ngIf="!isLoggin">
+                                <a class="nav-link" routerLink="register" routerActive="active">Signup</a>
+                            </li>
+                    <li class="nav-item"  *ngIf="!isLoggin">
+                        <a class="nav-link" routerLink="login" routerActive="active">login</a>
+                    </li>
+                    <li class="nav-item dropdown" dropdown *ngIf="isLoggin">
+                        <button class="btn btn-secondary btn-sm" dropdownToggle (click)="false" style="cursor:pointer;">Hello, {{activeUser.username}}</button>
+                        <ul *dropdownMenu class="dropdown-menu">
+                            <li>
+                                <a class="nav-link dropdown-item" routerLink="/shopping-cart">My Services</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="nav-link dropdown-item" (click)="logout()">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </nav>
+        </header>
+    </div>
+</div>

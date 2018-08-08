@@ -1,0 +1,87 @@
+.bg-overlay-2{
+    background: url('../../assets/img/port02.jpg') fixed;
+    background-size:cover;
+    position: relative;
+    min-height:500px;
+    
+}
+
+
+
+.overlay{
+    background-color: rgba(0,0,0,0.67);
+    min-height:500px;
+}
+
+.wrapper-message{
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+
+section {
+	position: relative;
+}
+
+
+
+
+
+.section-padding{
+    padding:60px 0px;
+}
+
+.grid-padding{
+    padding:0 8px;
+}
+
+.grid-padding img{
+    margin-bottom: 15px;
+}
+
+.padding-right-zero{
+    padding-right:0px !important;
+}
+
+#myGrid{
+    margin-top: 50px;
+}
+
+.fadeInRight{
+    animation-duration: 2s;
+}
+
+/* .arrow-back, .arrow-forward{
+	position:absolute;
+	opacity:0.9;
+	background-color:black;
+	padding:10px;
+	top:190;
+	color:white;
+	text-weight:bold;
+	cursor:pointer;
+} */
+ 
+.arrow-back{
+    position: absolute;
+    background-color: grey;
+    top:250px;
+    left: 0px;
+    padding:4px;
+    cursor: pointer;
+    
+} 
+
+.arrow-forward{
+    position: absolute;
+    background-color: grey;
+    top:250px;
+    padding:4px;
+    right:0;
+    cursor: pointer;
+    float: right ;
+}

@@ -1,0 +1,38 @@
+.contact-section{
+    background-color: #f0f1e9;
+}
+
+
+agm-map{
+    height:300px;
+    padding:20px;
+    
+}
+
+.contact-form{
+    padding-left: 30px;
+}
+
+input{
+    border:none;
+    border-bottom: solid 2px;
+    width: 80%;
+    display:block;
+    background: transparent;
+    font-family: Poppins-SemiBold;
+    font-size: 20px;
+    color:#555555;
+    line-height:1;
+    padding:10px 0 0 0;
+}
+
+textarea{
+    display:block;
+    background: transparent;
+    font-family: Poppins-SemiBold;
+    font-size: 20px;
+}
+
+.send-button{
+    margin-top:20px;
+}
